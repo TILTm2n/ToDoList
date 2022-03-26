@@ -13,10 +13,11 @@ class ToDoTableCell: UITableViewCell {
     
     private var title: UILabel = {
         var title = UILabel()
-        title.font = .systemFont(ofSize: 17, weight: .semibold)
         title.numberOfLines = 0
-        title.lineBreakMode = .byWordWrapping
+        title.textColor = .yellow
         title.textAlignment = .left
+        title.lineBreakMode = .byWordWrapping
+        title.font = .systemFont(ofSize: 17, weight: .semibold)
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -29,8 +30,11 @@ class ToDoTableCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        //self.contentView.translatesAutoresizingMaskIntoConstraints = true
         contentView.addSubview(title)
         contentView.addSubview(amount)
+        contentView.backgroundColor = .blue
+        
         titleConstraints()
     }
     
